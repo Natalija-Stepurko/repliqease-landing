@@ -1,0 +1,78 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  padding: 0 1rem;
+  color: #ffffff;
+
+  /* two-layer background: 
+     1) semi-transparent gradient on top 
+     2) your purple image underneath */
+  background:
+    linear-gradient(rgba(31, 41, 55, 0.6), rgba(31, 41, 55, 0.6)),
+    url('../assets/banner-bg.png') no-repeat center/cover;
+}
+
+.content {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.title {
+  font-size: 6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  /* allow wrapping on narrow screens */
+  flex-wrap: wrap;
+}
+
+.featureBox {
+  flex: 1;
+  min-width: 200px;      /* ensure boxes don’t shrink too small */
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ===== Responsive tweaks ===== */
+
+/* On screens narrower than 768px, stack the feature boxes */
+@media (max-width: 767px) {
+  .features {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* Scale down headings on very small screens */
+@media (max-width: 480px) {
+  .title {
+    font-size: 3rem;
+  }
+  .subtitle {
+    font-size: 1.25rem;
+  }
+  .featureBox {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+}
